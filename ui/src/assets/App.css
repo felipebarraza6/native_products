@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@import url("https://unpkg.com/leaflet@1.9.3/dist/leaflet.css");
+
+.custom-select .ant-select-selector {
+  background-color: #5c068c !important;
+  color: white !important;
+  border-color: #5c068c !important;
+  border-radius: 0 !important;
+  text-align: left !important;
+
+  width: 100% !important;
+}
+
+.custom-select .ant-select-selection-item {
+  color: white !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+}
+
+.custom-select .ant-select-dropdown {
+  background-color: #5c068c !important;
+  width: 100% !important;
+  border-radius: 0 !important;
+}
+
+.custom-select .ant-select-item-option-content {
+  color: white !important;
+
+  border-radius: 0 !important;
+
+  width: 100% !important;
+}
+
+.custom-select
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: #5c068c !important;
+  color: white !important;
+  border-radius: 0px !important;
+  width: 100% !important;
+}
+
+.custom-select .ant-select-item-option-active {
+  background-color: #5c068c !important;
+  color: white !important;
+  border-radius: 0px !important;
+  width: 100% !important;
+}
+
+.custom-select .ant-select-selection-placeholder {
+  color: white !important;
+}
+
+.custom-select .ant-select-arrow {
+  color: white !important; /* Cambiar color de la flecha del dropdown */
+}
+
+.custom-select .ant-select-focused .ant-select-arrow {
+  color: white !important; /* Asegurarse que la flecha permanezca blanca cuando el select está enfocado */
+}
+
+:where(.css-dev-only-do-not-override-2i2tap).ant-select-dropdown
+  .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  color: rgba(0, 0, 0, 0.88);
+  font-weight: 800;
+  background-color: #5c068c;
+}
+
+.custom-table .ant-table-thead > tr > th {
+  background-color: #00843d; /* Fondo verde */
+  color: white; /* Texto blanco */
+  text-align: left; /* Alineación del texto a la izquierda */
+  border-radius: 0; /* Bordes cuadrados */
+}
+
+
+.ant-table {
+  border-radius: 0 !important;
+}
+
+.ant-table-cell {
+  border-radius: 0 !important;
+}
