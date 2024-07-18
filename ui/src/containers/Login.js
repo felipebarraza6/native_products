@@ -14,7 +14,6 @@ const Login = () => {
     const response = await api.authenticated
       .login(data)
       .then((x) => {
-        console.log(x.data);
         dispatch({
           type: "LOGIN",
           payload: {

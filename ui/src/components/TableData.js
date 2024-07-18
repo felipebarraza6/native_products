@@ -12,7 +12,7 @@ const TableData = () => {
     { title: "Pfmn", dataIndex: "pfnm" },
     { title: "Especie", dataIndex: "species" },
     { title: "Condición", dataIndex: "condition" },
-    { title: "Formato comercial", dataIndex: "format_commercial" },
+    { title: "Formato comercial", dataIndex: "format_comercial" },
     { title: "Unidad", dataIndex: "unit" },
     { title: "Precio", dataIndex: "price_1" },
     { title: "Lugar de venta", dataIndex: "location_sale" },

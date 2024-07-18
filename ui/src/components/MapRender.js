@@ -288,7 +288,6 @@ const MapRender = () => {
 
   const { state } = useContext(AppContext);
   const registers = state.registers.list;
-  console.log(registers);
 
   const [selectedCoordinates, setSelectedCoordinates] =
     useState(allCoordinates);
@@ -327,7 +326,7 @@ const MapRender = () => {
         selectedCoordinates[0]?.lat,
         selectedCoordinates[selectedCoordinates.length - 1]?.lon,
       ]}
-      zoom={7}
+      zoom={8}
       scrollWheelZoom={false}
       style={styles.mapContaier}
     >

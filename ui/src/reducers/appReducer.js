@@ -16,7 +16,6 @@ export const appReducer = (state, action) => {
       };
 
     case "SET_FILTERS":
-      console.log(action.payload);
       return {
         ...state,
         registers: {

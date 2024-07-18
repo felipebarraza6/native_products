@@ -55,13 +55,11 @@ const SiderFilters = () => {
     const totalRegisters = state.registers.count;
     const pageSize = 10;
     const totalPages = Math.ceil(totalRegisters / pageSize);
-    console.log(totalPages);
     let totalElemennts = [];
 
     const getRegisters = async (page) => {
       const response = await list_registers(page, state.registers.filters).then(
         (res) => {
-          console.log(res.results);
           totalElemennts = [...totalElemennts, ...res.results];
         }
       );
@@ -197,12 +195,12 @@ const SiderFilters = () => {
                       dropdownStyle={styles.dropdown}
                     >
                       {state.uniques_values_selects &&
-                        state.uniques_values_selects.pfnms.map((pfmn) => (
+                        state.uniques_values_selects.pfnms.map((pfnm) => (
                           <Select.Option
-                            value={pfmn}
+                            value={pfnm}
                             style={styles.select.innerSelect}
                           >
-                            {pfmn}
+                            {pfnm}
                           </Select.Option>
                         ))}
                     </Select>
