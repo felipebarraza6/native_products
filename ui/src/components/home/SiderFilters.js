@@ -9,7 +9,11 @@ import {
   notification,
   Drawer,
 } from "antd";
-import { FileExcelOutlined, ReloadOutlined } from "@ant-design/icons";
+import {
+  FileExcelOutlined,
+  ReloadOutlined,
+  StarOutlined,
+} from "@ant-design/icons";
 import { AppContext } from "../../App";
 import { list_registers } from "../../api/endpoints";
 import * as XLSX from "xlsx";
@@ -200,11 +204,15 @@ const SiderFilters = () => {
                             value={pfnm}
                             style={styles.select.innerSelect}
                           >
+                            {pfnm.includes("maqui") && (
+                              <StarOutlined style={{ marginRight: "7px" }} />
+                            )}
                             {pfnm}
                           </Select.Option>
                         ))}
                     </Select>
                   </Item>
+
                   <Item name="species" style={styles.item}>
                     <Select
                       placeholder="Especie"
@@ -224,110 +232,117 @@ const SiderFilters = () => {
                         ))}
                     </Select>
                   </Item>
-                  <Item name="condition" style={styles.item}>
-                    <Select
-                      placeholder="Condición"
-                      className="custom-select"
-                      width="100%"
-                      style={styles.select}
-                      dropdownStyle={styles.dropdown}
-                    >
-                      {state.uniques_values_selects &&
-                        state.uniques_values_selects.conditions.map(
-                          (condition) => (
-                            <Select.Option
-                              value={condition}
-                              style={styles.select.innerSelect}
-                            >
-                              {condition}
-                            </Select.Option>
-                          )
-                        )}
-                    </Select>
-                  </Item>
-                  <Item name="format_comercial" style={styles.item}>
-                    <Select
-                      placeholder="Formato comercial"
-                      className="custom-select"
-                      width="100%"
-                      style={styles.select}
-                      dropdownStyle={styles.dropdown}
-                    >
-                      {state.uniques_values_selects &&
-                        state.uniques_values_selects.format_comercials.map(
-                          (format_commercial) => (
-                            <Select.Option
-                              value={format_commercial}
-                              style={styles.select.innerSelect}
-                            >
-                              {format_commercial}
-                            </Select.Option>
-                          )
-                        )}
-                    </Select>
-                  </Item>
-                  <Item name="unit" style={styles.item}>
-                    <Select
-                      placeholder="Unidad"
-                      className="custom-select"
-                      width="100%"
-                      style={styles.select}
-                      dropdownStyle={styles.dropdown}
-                    >
-                      {state.uniques_values_selects &&
-                        state.uniques_values_selects.units.map((unit) => (
-                          <Select.Option
-                            value={unit}
-                            style={styles.select.innerSelect}
-                          >
-                            {unit}
-                          </Select.Option>
-                        ))}
-                    </Select>
-                  </Item>
-                  <Item name="price_1" style={styles.item}>
-                    <Select
-                      placeholder="Precio"
-                      className="custom-select"
-                      width="100%"
-                      style={styles.select}
-                      dropdownStyle={styles.dropdown}
-                    >
-                      {state.uniques_values_selects &&
-                        state.uniques_values_selects.prices.map((price_1) => (
-                          <Select.Option
-                            value={price_1}
-                            style={styles.select.innerSelect}
-                          >
-                            {new Intl.NumberFormat("es-CL", {
-                              style: "currency",
-                              currency: "CLP",
-                            }).format(price_1)}
-                          </Select.Option>
-                        ))}
-                    </Select>
-                  </Item>
-                  <Item name="location_sale" style={styles.item}>
-                    <Select
-                      placeholder="Lugar de venta"
-                      className="custom-select"
-                      style={styles.select}
-                      dropdownStyle={styles.dropdown}
-                    >
-                      {state.uniques_values_selects &&
-                        state.uniques_values_selects.locations_sales.map(
-                          (location_sale) =>
-                            location_sale !== "" && (
+                  {false && (
+                    <>
+                      <Item name="condition" style={styles.item}>
+                        <Select
+                          placeholder="Condición"
+                          className="custom-select"
+                          width="100%"
+                          style={styles.select}
+                          dropdownStyle={styles.dropdown}
+                        >
+                          {state.uniques_values_selects &&
+                            state.uniques_values_selects.conditions.map(
+                              (condition) => (
+                                <Select.Option
+                                  value={condition}
+                                  style={styles.select.innerSelect}
+                                >
+                                  {condition}
+                                </Select.Option>
+                              )
+                            )}
+                        </Select>
+                      </Item>
+                      <Item name="format_comercial" style={styles.item}>
+                        <Select
+                          placeholder="Formato comercial"
+                          className="custom-select"
+                          width="100%"
+                          style={styles.select}
+                          dropdownStyle={styles.dropdown}
+                        >
+                          {state.uniques_values_selects &&
+                            state.uniques_values_selects.format_comercials.map(
+                              (format_commercial) => (
+                                <Select.Option
+                                  value={format_commercial}
+                                  style={styles.select.innerSelect}
+                                >
+                                  {format_commercial}
+                                </Select.Option>
+                              )
+                            )}
+                        </Select>
+                      </Item>
+                      <Item name="unit" style={styles.item}>
+                        <Select
+                          placeholder="Unidad"
+                          className="custom-select"
+                          width="100%"
+                          style={styles.select}
+                          dropdownStyle={styles.dropdown}
+                        >
+                          {state.uniques_values_selects &&
+                            state.uniques_values_selects.units.map((unit) => (
                               <Select.Option
-                                value={location_sale}
+                                value={unit}
                                 style={styles.select.innerSelect}
                               >
-                                {location_sale.toUpperCase()}
+                                {unit}
                               </Select.Option>
-                            )
-                        )}
-                    </Select>
-                  </Item>
+                            ))}
+                        </Select>
+                      </Item>
+                      <Item name="price_1" style={styles.item}>
+                        <Select
+                          placeholder="Precio"
+                          className="custom-select"
+                          width="100%"
+                          style={styles.select}
+                          dropdownStyle={styles.dropdown}
+                        >
+                          {state.uniques_values_selects &&
+                            state.uniques_values_selects.prices.map(
+                              (price_1) => (
+                                <Select.Option
+                                  value={price_1}
+                                  style={styles.select.innerSelect}
+                                >
+                                  {new Intl.NumberFormat("es-CL", {
+                                    style: "currency",
+                                    currency: "CLP",
+                                  }).format(price_1)}
+                                </Select.Option>
+                              )
+                            )}
+                        </Select>
+                      </Item>
+                      <Item name="location_sale" style={styles.item}>
+                        <Select
+                          placeholder="Lugar de venta"
+                          className="custom-select"
+                          style={styles.select}
+                          dropdownStyle={styles.dropdown}
+                        >
+                          {state.uniques_values_selects &&
+                            state.uniques_values_selects.locations_sales.map(
+                              (location_sale) =>
+                                location_sale !== "" && (
+                                  <Select.Option
+                                    value={location_sale}
+                                    style={styles.select.innerSelect}
+                                  >
+                                    {location_sale.toUpperCase()}
+                                  </Select.Option>
+                                )
+                            )}
+                        </Select>
+                      </Item>
+                    </>
+                  )}
+
                   <Item style={styles.item}>
                     <Button
                       type="primary"
@@ -681,6 +696,7 @@ const styles = {
   },
   select: {
     width: "100%",
+    backgroundColor: "#5c068c",
     innerSelect: { color: "white" },
   },
   dropdown: {

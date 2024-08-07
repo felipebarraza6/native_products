@@ -7,7 +7,7 @@ const Gallery = () => {
   const { state } = useContext(AppContext);
 
   return (
-    <Row align="middle" style={{ marginTop: "30px" }}>
+    <Row align="middle" style={{ marginTop: "20px" }}>
       <Col span={1}>
         <Button
           shape="circle"
@@ -36,8 +36,6 @@ const Gallery = () => {
               <img src={photo.image} alt="img1" width="90%" />
             </div>
           ))}
-          
-         
         </Carousel>
       </Col>
       <Col span={1}>

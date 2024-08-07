@@ -392,7 +392,7 @@ const MapRender = () => {
 };
 
 const styles = {
-  mapContaier: { height: "500px", width: "100%", zIndex: 0 },
+  mapContaier: { height: "500px", width: "100%", zIndex: 0, marginTop: "20px" },
 };
 
 export default MapRender;

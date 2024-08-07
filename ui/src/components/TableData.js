@@ -59,7 +59,6 @@ const TableData = () => {
       size="small"
       className="custom-table"
       columns={columns}
-      style={{ marginTop: "50px" }}
     />
   );
 };

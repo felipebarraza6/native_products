@@ -48,6 +48,18 @@
 
   width: 100% !important;
 }
+.custom-select .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: red !important;
+  color: white !important;
+  border-radius: 0px !important;
+  width: 100% !important;
+}
+.custom-select .ant-select-item-option-active {
+  background-color: red !important;
+  color: white !important;
+  border-radius: 0px !important;
+  width: 100% !important;
+}
 
 .custom-select .ant-select-selection-item {
   color: white !important;
@@ -56,7 +68,7 @@
 }
 
 .custom-select .ant-select-dropdown {
-  background-color: #5c068c !important;
+  background-color: red !important;
   width: 100% !important;
   border-radius: 0 !important;
 }
@@ -71,14 +83,14 @@
 
 .custom-select
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
-  background-color: #5c068c !important;
+  background-color: red !important;
   color: white !important;
   border-radius: 0px !important;
   width: 100% !important;
 }
 
 .custom-select .ant-select-item-option-active {
-  background-color: #5c068c !important;
+  background-color: red !important;
   color: white !important;
   border-radius: 0px !important;
   width: 100% !important;
